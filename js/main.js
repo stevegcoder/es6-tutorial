@@ -1,3 +1,5 @@
+import '../css/teststyle.scss';
+
 var calculateMonthlyPayment = function (principal, years, rate) {
     if (rate) {
         var monthlyRate = rate / 100 / 12;
