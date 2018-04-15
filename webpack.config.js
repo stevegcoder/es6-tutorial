@@ -2,9 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './js/main.js',
+    entry: './src/js/main.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].bundle.[chunkhash].js'
@@ -25,6 +26,11 @@ module.exports = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            }, {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                'file-loader'
+                ]
             }
         ]
     },
@@ -32,6 +38,9 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html',
+        }),
         new ExtractTextPlugin('style.bundle.[chunkhash].css'),
     ],
     stats: {
