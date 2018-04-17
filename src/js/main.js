@@ -1,4 +1,6 @@
 import '../css/teststyle.scss';
+import plusimage from '../images/plus.svg';
+import austriaimage from '../images/Hallstatt-4.jpg';
 
 // var calculateMonthlyPayment = function (principal, years, rate) {
 //     if (rate) {
@@ -23,7 +25,11 @@ export default class Hello extends Component {
   render() {
     return (
       <div>
-        Hello from react es6
+        <div>
+            Hello from react es6
+        </div>
+        <img src={plusimage} width="16px"/>
+        <img src={austriaimage} />
       </div>
     );
   }
