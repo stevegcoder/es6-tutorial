@@ -1,0 +1,78 @@
+.photo-gallery-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    .photo-gallery {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        flex: 1 1 auto; // Gallery stretches to edge of screen so left and right arrow are at edges
+
+        max-width: 1215px; // When screen stretches past max-width then arrow buttons won't be at edges but at center b/c
+                            // of parent's justify-content center
+        
+
+        button {
+            &.left, &.right {
+                flex: 0 0 auto;
+                padding: 0;
+                border: 0;
+                background: transparent;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        button.close {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            outline: none;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 101;
+        }
+
+        button svg {
+            width: 32px;
+            height: 32px;
+            fill: #CCC;
+        }
+
+        button svg.x {
+            width: 24px;
+            height: 24px;
+        }
+
+        figure {
+            flex-flow: column nowrap;
+            display: flex;
+            margin: 0 40px;
+            position: relative;
+            justify-content: center;
+            flex: 1 1 auto;
+            align-items: center;
+
+            img {
+                width: 100%;    // Set width and height to 100% so it stretches/shrinks with the window
+                height: 100%; 
+            }
+        }
+
+        figure figcaption {
+            text-align: center;
+            color: #CCC;
+            position: relative;
+            top: -25px;
+            right: 0;
+            left: 0;
+        }
+    }
+}
+
+
+

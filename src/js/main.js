@@ -20,6 +20,7 @@ import austriaimage from '../images/Hallstatt-4.jpg';
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { PhotoGallery } from './photogallery';
 
 export default class Hello extends Component {
   render() {
@@ -34,4 +35,12 @@ export default class Hello extends Component {
     );
   }
 }
-ReactDOM.render(<Hello />, document.getElementById('root'));
+
+let photoGalleryImages = [{
+    url: 'https://filestore.community.support.microsoft.com/api/images/08e70e6f-deb4-4003-9848-96fc8248ab78',
+    caption: 'Hallstatt, Austria'
+}, {
+    url: 'http://www.travellushes.com/wp-content/uploads/2016/07/hallstatt6.jpg',
+    caption: 'Another image of Hallstatt'
+}]
+ReactDOM.render(<PhotoGallery images={photoGalleryImages}/>, document.getElementById('root'));
