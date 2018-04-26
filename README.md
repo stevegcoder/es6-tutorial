@@ -1,3 +1,3 @@
-## ES6 Tutorial
+## ES6 Tutorial Fork
 
-Start the tutorial [here](http://ccoenraets.github.io/es6-tutorial).
+A fork of ES6 Tutorial to setup a project with Webpack and a Photo Gallery in React.
