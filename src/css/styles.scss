@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     padding: 0;
     margin: 0;
+    height: 100vh;
 }
 
 header {
@@ -157,4 +158,8 @@ button:active {
 
 button:focus {
     outline:0;
+}
+
+#root {
+    height: 100%;
 }

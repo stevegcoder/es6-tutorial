@@ -1,4 +1,4 @@
-import '../css/teststyle.scss';
+import '../css/styles.scss';
 import plusimage from '../images/plus.svg';
 import austriaimage from '../images/Hallstatt-4.jpg';
 

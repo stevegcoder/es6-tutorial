@@ -8,6 +8,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+        justify-content: center;
         flex: 1 1 auto; // Gallery stretches to edge of screen so left and right arrow are at edges
 
         max-width: 1215px; // When screen stretches past max-width then arrow buttons won't be at edges but at center b/c
@@ -25,28 +26,20 @@
             }
         }
 
-        button.close {
-            padding: 0;
-            border: 0;
-            background: transparent;
-            cursor: pointer;
-            outline: none;
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            z-index: 101;
-        }
-
         button svg {
             width: 32px;
             height: 32px;
             fill: #CCC;
         }
 
-        button svg.x {
-            width: 24px;
-            height: 24px;
+        .photo-gallery-figure-enter {
+            opacity: 0.01;
         }
+            
+        .photo-gallery-figure-enter.photo-gallery-figure-enter-active {
+            opacity: 1;
+            transition: opacity 300ms ease-in;
+        }    
 
         figure {
             flex-flow: column nowrap;
@@ -56,20 +49,26 @@
             justify-content: center;
             flex: 1 1 auto;
             align-items: center;
+            
+            &.hidden {
+                display: none;
+            }
 
             img {
                 width: 100%;    // Set width and height to 100% so it stretches/shrinks with the window
                 height: 100%; 
             }
-        }
 
-        figure figcaption {
-            text-align: center;
-            color: #CCC;
-            position: relative;
-            top: -25px;
-            right: 0;
-            left: 0;
+            figcaption {
+                text-align: center;
+                color: #CCC;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, .5);
+                padding: 5px 0;
+            }
         }
     }
 }
