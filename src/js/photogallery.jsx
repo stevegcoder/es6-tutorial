@@ -72,7 +72,7 @@ export class PhotoGallery extends Component {
                         transitionEnterTimeout={300}
                         transitionLeave={false}>
                         <figure key={selectedImage.url} onTouchStart={this.onTouchStart} onTouchMove={this.onTouchMove}>
-                            <img src={selectedImage.url} />
+                            <img src={selectedImage.url} alt={selectedImage.caption}/>
                             <figcaption>{selectedImage.caption}</figcaption>
                         </figure>
                     </CSSTransitionGroup>

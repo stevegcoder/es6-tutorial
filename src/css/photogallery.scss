@@ -8,17 +8,16 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between; // Use space-between to keep arrows at the edges
         flex: 1 1 auto; // Gallery stretches to edge of screen so left and right arrow are at edges
 
         max-width: 1215px; // When screen stretches past max-width then arrow buttons won't be at edges but at center b/c
                             // of parent's justify-content center
         
-
         button {
             &.left, &.right {
                 flex: 0 0 auto;
-                padding: 0;
+                padding: 10px;
                 border: 0;
                 background: transparent;
                 cursor: pointer;
@@ -45,17 +44,11 @@
             flex-flow: column nowrap;
             display: flex;
             margin: 0 40px;
-            position: relative;
-            justify-content: center;
-            flex: 1 1 auto;
-            align-items: center;
-            
-            &.hidden {
-                display: none;
-            }
+            position: relative; // Use relative so figcaption has anchor of this element
+            // Default flex: 0 1 auto Don't grow with container otherwise image will stretch away from natural dimensions
 
             img {
-                width: 100%;    // Set width and height to 100% so it stretches/shrinks with the window
+                width: 100%;    // Set width and height to 100% so it shrinks with the window
                 height: 100%; 
             }
 
@@ -63,8 +56,8 @@
                 text-align: center;
                 color: #CCC;
                 position: absolute;
-                bottom: 0;
-                right: 0;
+                bottom: 0;  // Caption is at bottom
+                right: 0;   // right and left 0 to center caption
                 left: 0;
                 background-color: rgba(0, 0, 0, .5);
                 padding: 5px 0;
